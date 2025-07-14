@@ -32,5 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-/notes/
 /src/main/java/io/github/vitalii/eshop/infra_service/k8s/certs/
