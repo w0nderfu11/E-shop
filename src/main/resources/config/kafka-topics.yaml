@@ -1,0 +1,45 @@
+kafka:
+  topics:
+    - auth.login.events
+    - auth.token.revoked
+    - auth.email.verification
+
+    - user.created
+    - user.updated
+    - user.deleted
+    - user.verified
+
+    - product.created
+    - product.updated
+    - product.deleted
+    - product.low-stock
+
+    - inventory.reserved
+    - inventory.released
+    - inventory.updated
+
+    - order.created
+    - order.cancelled
+    - order.completed
+    - order.payment.failed
+    - order.status.changed
+
+    - payment.initiated
+    - payment.successful
+    - payment.failed
+
+    - event.*
+    - logs.user.actions
+    - logs.system.errors
+
+    - infra.heartbeat
+    - infra.dependency.status
+    - infra.topics.created
+
+    - ws.notifications.broadcast
+    - order.status.changed
+
+    - system.metrics.events
+
+    - '*.deleted'
+    - '*.error'

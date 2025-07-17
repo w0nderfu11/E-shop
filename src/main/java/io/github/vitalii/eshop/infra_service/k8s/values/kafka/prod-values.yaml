@@ -1,0 +1,62 @@
+replicaCount: 3
+
+auth:
+  enabled: true
+  clientProtocol: SASL_PLAINTEXT
+  interBrokerProtocol: SASL_PLAINTEXT
+  existingSecret: infra-kafka-credentials-prod
+
+listeners:
+  client:
+    protocol: SASL_PLAINTEXT
+
+zookeeper:
+  enabled: true
+  replicaCount: 3
+  auth:
+    enabled: true
+    existingSecret: infra-zookeeper-credentials-prod
+
+persistence:
+  enabled: true
+  size: 5Gi
+  storageClass: standard
+
+metrics:
+  kafka:
+    enabled: true
+  jmx:
+    enabled: true
+
+livenessProbe:
+  enabled: true
+readinessProbe:
+  enabled: true
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 2048Mi
+  requests:
+    cpu: 250m
+    memory: 1024Mi
+
+heapOpts: "-Xmx1536m -Xms1024m"
+
+volumePermissions:
+  enabled: true
+
+serviceAccount:
+  create: true
+  name: kafka-prod-sa
+
+logLevel: INFO
+
+externalAccess:
+  enabled: false
+
+networkPolicy:
+  enabled: true
+  allowExternal: false
+
+autoCreateTopicsEnable: false
