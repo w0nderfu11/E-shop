@@ -1,4 +1,4 @@
-package io.github.vitalii.eshop.infra_service.config;
+package io.github.vitalii.eshop.infra_service.config.kafka;
 
 
 import lombok.Getter;
