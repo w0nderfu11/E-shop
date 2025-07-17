@@ -1,0 +1,16 @@
+spring:
+  config:
+    import: "classpath:config/kafka-topics.yaml"
+
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  endpoint:
+    health:
+      show-details: when_authorized

@@ -1,0 +1,18 @@
+spring:
+  profiles: prod
+
+kafka:
+  bootstrap-servers: >
+    kafka-prod-controller-0.kafka-prod-headless.prod.svc.cluster.local:9092,
+    kafka-prod-controller-1.kafka-prod-headless.prod.svc.cluster.local:9092,
+    kafka-prod-controller-2.kafka-prod-headless.prod.svc.cluster.local:9092
+  auth:
+    enabled: true
+    username: ${KAFKA_USERNAME}
+    password: ${KAFKA_PASSWORD}
+    clientProtocol: SASL_PLAINTEXT
+
+  topic:
+    partitions: 6
+    replication-factor: 3
+  topics-config: classpath:config/kafka-topics.yaml

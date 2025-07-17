@@ -1,0 +1,15 @@
+spring:
+  profiles: dev
+
+kafka:
+  bootstrap-servers: kafka-dev-controller-0.kafka-dev-headless.dev.svc.cluster.local:9092
+  auth:
+    enabled: true
+    username: ${KAFKA_USERNAME}
+    password: ${KAFKA_PASSWORD}
+    clientProtocol: SASL_PLAINTEXT
+
+  topic:
+    partitions: 2
+    replication-factor: 2
+  topics-config: classpath:config/kafka-topics.yaml
